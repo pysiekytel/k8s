@@ -76,6 +76,10 @@ spec:
               secretKeyRef:
                 name: nats-streaming-{{ .Values.stan.nats.serviceRoleAuth.natsClusterName }}-bound-token
                 key: token
+          - name: NATS_SERVICE
+            value: {{ .Values.stan.nats.url }}
+          - name: NATS_URL
+            value: nats://$(NATS_OPERATOR_SERVICE_ACCOUNT):$(NATS_OPERATOR_BOUND_TOKEN)@$(NATS_SERVICE)
           {{- end }}
           ports:
           - containerPort: 8222
