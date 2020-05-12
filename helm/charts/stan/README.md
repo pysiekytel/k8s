@@ -33,7 +33,7 @@ stan:
 #### Authenticate using NatsServiceRole
 
 When using NATS Operator you can configure NATS Service Roles to
-authenticate your clients with NATS. 
+generate credentials for your clients in NATS config. 
 https://github.com/nats-io/nats-operator#using-serviceaccounts
 This will create ServiceAccount and NatsServiceRole and enable
 authentication using "bound-token":
